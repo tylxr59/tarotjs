@@ -1,6 +1,5 @@
 /*
 	tarotjs v1.1 - https://github.com/tylxr59/tarotjs
-	Licensed under WTFPL
 	
 	Takes the numerical placement of the card and returns the location and card
 	By default, putCard writes the card in the the element w/ ID of the location/placement
@@ -8,6 +7,7 @@
 	Example:
 	<a href="#" onClick="tarotjs('0');" id="0">Pull a Card</a>
 */ 
+
 const cards = []; // Card storage that exists between generations
 
 function tarotjs(location) {
