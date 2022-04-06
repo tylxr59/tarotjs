@@ -1,13 +1,14 @@
 /*
-	tarotjs v1.1 - https://github.com/tylxr59/tarotjs
+	tarotjs v2 - https://github.com/tylxr59/tarotjs
 	
 	Takes the numerical placement of the card and returns the location and card
-	By default, putCard writes the card in the the element w/ ID of the location/placement
+	By default, putCard writes the image and card in the the element w/ ID of the location/placement
+
+	Rider-Waite-Smith Card Scans by Steve - https://steve-p.org/cards/RWSa.html (High res versions available at his website)
 	
 	Example:
 	<a href="#" onClick="tarotjs('0');" id="0">Pull a Card</a>
 */ 
-
 const cards = []; // Card storage that exists between generations
 
 function tarotjs(location) {
@@ -78,13 +79,13 @@ function tarotjs(location) {
 				break;
 		}
 		
-		putCard(location,theCard); // ...and process it
+		putCard(location,theCard,cardID,orientation); // ...and process it
 	} else {
 		tarotjs(location); // Otherwise, try again
 	}
 }
 
 // Do something with the card
-function putCard(location, theCard) {
-	document.getElementById(location).innerHTML = theCard;
+function putCard(location, theCard, cardID, orientation) {
+	document.getElementById(location).innerHTML = "<img class=\"" + orientation + "\" src=\"cards/" + cardID + ".jpg\"><br><br>" + theCard;
 }
